@@ -31,7 +31,7 @@ export default function Login() {
   const onSubmit = async (data: LoginFormData) => {
     setIsLoading(true)
     try {
-      const response = await api.post('/auth/login', data)
+      const response = await api.post('/auth/login/json', data)
       const { access_token, refresh_token, user } = response.data
       
       setAuth(user, access_token, refresh_token)
