@@ -9,7 +9,7 @@ services:
     container_name: fileserver-manager-backend
     restart: unless-stopped
     ports:
-      - "8000:8000"
+      - "${BACKEND_PORT:-8000}:8000"
     environment:
       # Database - SQLite (default)
       - DATABASE_URL=sqlite:///./data/fileserver.db
